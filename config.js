@@ -16,6 +16,6 @@ const conf = convict({
 
 // Load environment dependent configuration
 const env = conf.get('env')
-conf.loadFile('./config/apiConnector.' + env + '.json')
+conf.loadFile('./config/mysql.' + env + '.json')
 
 module.exports = conf
