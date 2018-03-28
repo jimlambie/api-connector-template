@@ -1,17 +1,21 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'node 6'
+    }
+    
     stages {
         stage('Build') {
             steps {
                 echo 'Installing..'
-                sh '/usr/local/bin/npm install' 
+                sh 'npm install' 
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh '/usr/local/bin/npm test' 
+                sh 'npm test' 
             }
         }
         stage('Deploy') {
